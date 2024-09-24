@@ -1,25 +1,34 @@
 
 function updateClock(){
-let city = document.querySelector("#pretoria")
-let pretoriaDate = document.querySelector("#date")
-let pretoriaTime = document.querySelector("#time")
+let chicagoCity = document.querySelector("#chicago");
 
-pretoriaDate.innerHTML= moment().format('MMMM Do YYYY');
-pretoriaTime.innerHTML= moment().format('h:mm:ss [<smaller>]A[</smaller>]');
+if (chicagoCity){
+let chicagoDate = document.querySelector("#date");
+let chicagoTime = document.querySelector("#time");
+
+chicagoDate.innerHTML= moment().tz("America/Chicago").format('MMMM Do YYYY');
+chicagoTime .innerHTML= moment().tz("America/Chicago").format('h:mm:ss [<smaller>]A[</smaller>]');
+}
+let londonCity = document.querySelector("#london");
 
 
-let londonCity = document.querySelector("#london")
-let londonDate = document.querySelector("#date-london")
-let londonTime = document.querySelector("#time-london")
+if (londonCity){
+
+let londonDate = document.querySelector("#date-london");
+let londonTime = document.querySelector("#time-london");
 
 londonDate.innerHTML= moment().tz("Europe/London").format('MMMM Do YYYY');
 londonTime.innerHTML= moment().tz("Europe/London").format('h:mm:ss [<smaller>]A[</smaller>]');
 }
-
+}
 
 
 function updateCity(event){
 let cityZone= event.target.value;
+if (cityZone === "current"){
+  cityZone = moment.tz.guess();
+}
+
 let cityName = cityZone.replace("_", " ").split("/")[1];
 
 let zoneTime= moment().tz(`${cityZone}`).format("h:mm:ss [<smaller>]A[</smaller>]");
@@ -40,7 +49,7 @@ cities.innerHTML= `
 let selector = document.querySelector("#city")
 selector.addEventListener("change", updateCity)
 
-updateClock();
+
 setInterval(updateClock, 1000)
-updateCity();
+
 setInterval(updateCity, 1000);
