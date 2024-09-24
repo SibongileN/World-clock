@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.45/moment-timezone-with-data-1970-2030.js"></script>
     <title>World clock</title>
 </head>
 <body>
@@ -14,11 +14,15 @@
 
        <select name="selector" class="select" id="city">
           <option value="Select a city">Select a city</option>
-          <option value="Pretoria">Pretoria</option>
-          <option value="London">London</option>
-          <option value="Dubai">Dubai</option>
+          <option value="Africa/Johannesburg" id="Johannesburg">Johannesburg</option>
+          <option value="Europe/London" id="London">London</option>
+          <option value="Asia/Dubai"  id="Dubai">Dubai</option>
+          <option value="France/Paris" id="Paris">Paris</option>
+          <option value="Indian/Mauritius" id="Mauritius">Mauritius</option>
+          <option value="Africa/Nairobi" id="Nairobi">Nairobi</option>
        </select>
 
+      <div class="cities" id="cities">
        <div class="city" id="pretoria">
         <div class="name">
            <h2>Pretoria</h2>
@@ -35,6 +39,7 @@
         </div>
         <div class="time" id="time-london"></div> 
        </div>
+      </div>
 
 
        

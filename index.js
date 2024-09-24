@@ -16,5 +16,31 @@ londonDate.innerHTML= moment().tz("Europe/London").format('MMMM Do YYYY');
 londonTime.innerHTML= moment().tz("Europe/London").format('h:mm:ss [<smaller>]A[</smaller>]');
 }
 
+
+
+function updateCity(event){
+let cityZone= event.target.value;
+let cityName = cityZone.replace("_", " ").split("/")[1];
+
+let zoneTime= moment().tz(`${cityZone}`).format("h:mm:ss [<smaller>]A[</smaller>]");
+let zoneDate = moment().tz(`${cityZone}`).format('MMMM Do YYYY');
+let cities = document.querySelector("#cities");
+cities.innerHTML= `
+    <div class="city">
+        <div class="name">
+           <h2>${cityName}</h2>
+           <div class="date" id="date">${zoneDate}</div>
+        </div>
+        <div class="time" id="time">${zoneTime} </div>
+     </div>
+`;
+
+}
+
+let selector = document.querySelector("#city")
+selector.addEventListener("change", updateCity)
+
 updateClock();
 setInterval(updateClock, 1000)
+updateCity();
+setInterval(updateCity, 1000);
