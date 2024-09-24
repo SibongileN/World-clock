@@ -20,6 +20,18 @@ let londonTime = document.querySelector("#time-london");
 londonDate.innerHTML= moment().tz("Europe/London").format('MMMM Do YYYY');
 londonTime.innerHTML= moment().tz("Europe/London").format('h:mm:ss [<smaller>]A[</smaller>]');
 }
+
+let sydneyCity = document.querySelector("#sydney");
+
+
+if (sydneyCity){
+
+let sydneyDate = document.querySelector("#date-sydney");
+let sydneyTime = document.querySelector("#time-sydney");
+
+sydneyDate.innerHTML= moment().tz("Australia/Sydney").format('MMMM Do YYYY');
+sydneyTime.innerHTML= moment().tz("Australia/Sydney").format('h:mm:ss [<smaller>]A[</smaller>]');
+}
 }
 
 

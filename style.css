@@ -18,7 +18,7 @@ width: 100%;
 border-radius: 5px;
 font-size: 15px;
 padding: 10px;
-margin: 15px 0;
+margin: 10px 0;
 
 }
 
@@ -32,12 +32,10 @@ h1{
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
-    margin: 20px 0;
+    margin: 13px 0;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
 }
 
-.city:last-child{
-border-bottom: none;
 }
 
      
