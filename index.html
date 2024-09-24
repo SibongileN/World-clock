@@ -10,7 +10,7 @@
   <div class="container">
     <h1>World Clock</h1>
 
-       <select name="city" id="city">
+       <select name="selector" class="select" id="city">
           <option value="Select a city">Select a city</option>
           <option value="Pretoria">Pretoria</option>
           <option value="London">London</option>
@@ -18,24 +18,33 @@
        </select>
 
        <div class="city">
-        <div class="name">Pretoria</div>
-        <div class="date">24 Septermber 2024</div>
-        <div class="time"> 10:46:24 AM</div>
-       </div>
-
-       <div class="city"></div>
-        <div class="name">Durban</div>
-        <div class="date">24 Septermber 2024</div>
-        <div class="time"> 10:46:24 AM</div>
+        <div class="name">
+           <h2>Pretoria</h2>
+           <div class="date">24 Septermber 2024</div>
+        </div>
+        <div class="time"> 10:46:24 <smaller>AM</smaller> </div>
        </div>
 
 
-      <script src="index.js"></script>
+       <div class="city">
+        <div class="name">
+           <h2>London</h2>
+           <div class="date">24 Septermber 2024</div>
+        </div>
+        <div class="time"> 10:46:24 <smaller>AM</smaller> </div>
+       </div>
+
+
+       
+
+
+  </div>
       <footer>
         This is coded by 
         <a href="https://github.com/SibongileN"> Sibongile Nkosi</a> and is open sourced from
         <a href="https://github.com/SibongileN/World-clock" target="_blank">GitHub</a>
       </footer>
-  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
